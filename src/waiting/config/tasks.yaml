@@ -1,0 +1,263 @@
+richard_persona:
+  description: >
+    Thoroughly read through the 'ActivistInvestor.md' document in the 'knowledge' folder.
+    Your goal is to internalize this information, and augment your persona with this additional 
+    information. You will make any and all decisions based on this information.
+    You are not to break character for any reason.
+  expected_output: >
+    A clear acknowledgement to the console that you have read the file and adopted the persona.
+  agent: richard
+
+research_company_task:
+  description: >
+    Conduct a thorough research about {company} and its market.
+    You need to gather information about the company, its products, services, and market position.
+    You also need to gather information about the industry, market trends, and competitive landscape.
+    You need to ensure that the information is accurate, up-to-date, and relevant to the current market conditions.
+    You need to ensure that you have all the necessary information to generate the expeted outputs, and in line with the 'company_research checklist'
+    in the knowledge folder.
+  expected_output: >
+    A detailed and comprehensive report which includes at least 2 paragraphs and 200 words on the business model,
+    2 paragraphs and 200 words on the product overview,
+    2 paragraphs and 200 words on the market position, and 2 paragraphs and 200 words on the industry overview.
+    Detailed view of customer segmentaqtion and uswe cases.
+    Detailed view of sector classification and positioning.
+    A strategic plan consisting of at least 3 paragraphs and 350 words.
+    The report should be well-structured, easy to read, and provide a comprehensive overview of the {company} and its market.
+    The report should be formatted as markdown without '```'.
+  agent: research_analyst
+  output_file: research/research_summary.md
+
+financial_data_collection_task:
+  description: >
+    Collect and analyze the financial data of the {company}.
+    You need to gather information about the company's financial performance, including revenue, profit margins, and
+    key financial ratios.
+    You also need to gather information about the company's financial statements, including income statement, balance sheet,
+    and cash flow statement.
+    You do need to collect historical data, at least 3 - 5 years, to ensure that you have a comprehensive view of the company's financial performance.
+    You need to ensure that the financial data is accurate, up-to-date (meaning that you need to take the historical data up to and incuding today's date), 
+    and relevant to the current market conditions.
+    You need to ensure that you have all the necessary information to generate the expected outputs, and in line with the 'financial_data_collection checklist'
+    in the knowledge folder.
+  expected_output: >
+    The required figures, in tabular format with the correct labels to ensure that the equity_analyst can use them to generate the expected outputs.
+    The financial data should include;
+    Balance sheet; liquidity, gearing, capital structure, asset quality.
+    Profitability metrics; revenue, profit margins, return on equity, return on capital employed, net income.
+    Cash flow; operating cash flow, free cash flow, capital expenditures, working capital efficiency.
+    Valuation; P/E ratio, P/B ratio, EV/EBITDA, DCF analysis, scenario analysis.
+    The financial data should be accurate, up-to-date(meaning that you need to take the historical data up to and incuding today's date), 
+    and relevant to the current market conditions.
+  agent: research_analyst
+  output_file: research/financial_data_collection.md
+
+industry_competitive_analysis_collection_task:
+  description: >
+    Conduct a comprehensive industry competitive analysis for the {company}.
+    You need to gather information about the industry, market trends, market size, regulatory and competitive landscape.
+    You also need to gather information about the key competitors, market share, competitive advantages, and industry trends.
+    You need all the relevant infomration inorder for a SWOT analysis and porters five forces analysis to be done.
+    You need to gather all information regarding legal and regulatory risk and compliance hurdles.
+    You need to ensure that the information is accurate, up-to-date, and relevant to the current market conditions.
+    You need to ensure that you have all the necessary information to generate the expected outputs, and in line with the 'industry_competitive_analysis_collection checklist'
+    in the knowledge folder.
+  expected_output: >
+    A detailed and comprehensive report which includes at least 2 paragraphs and 200 words on the
+    market size, 2 paragraphs and 200 words on the growth drivers, 2 paragraphs and 200 words on the regulatory landscape,
+    2 paragraphs and 200 words on the competitive landscape, 2 paragraphs and 200 words on the industry trends,
+    2 paragraphs and 200 words on the SWOT analysis, and 2 paragraphs and 200 words on PORTER'S five forces.
+    The report should include a detailed industry overview and competitive positioning of the {company}.
+    The report should include detailed analysis of regulatory risk and compliance hurdles.
+    The report should be well-structured, easy to read, and provide a comprehensive overview of the industry and competitive landscape.
+    The report should be formatted as markdown without '```'.
+  agent: research_analyst
+  output_file: research/industry_competitive_analysis.md
+
+management_governance_analysis_collection_task:
+  description: >
+    Conduct a comprehensive management governance analysis for the {company}.
+    You need to gather information about the management team, board of directors, corporate governance structure,
+    and organizational culture and values.
+    You also need to gather information about the track record of capital allocation and strategic execution,
+    insider ownership and alignment, management team backgrounds, experience, track record, and reputation,
+    board of directors composition, independence, expertise, and governance practices.
+    You need to ensure that the information is accurate, up-to-date, and relevant to the current market conditions.
+    You need to ensure that you have all the necessary information to generate the expected outputs, and in line with the 'management_governance_analysis_collection checklist'
+    in the knowledge folder.
+  expected_output: >
+    A detailed and comprehensive report which includes at least 2 paragraphs and 200 words on the
+    management team, 2 paragraphs and 200 words on the board of directors, 2 paragraphs and 200 words on the corporate governance structure,
+    2 paragraphs and 200 words on the organizational culture and values, and 2 paragraphs and 200 words on insider ownership and alignment.   
+    The report should include details of governance practices and ESG (Environmental, Social, and Governance) disclosures.
+    The report should include a detailed analysis of the management team's track record of capital allocation and strategic execution.
+    The report should be well-structured, easy to read, and provide a comprehensive overview of the management governance analysis.
+    The report should be formatted as markdown without '```'.
+  agent: research_analyst
+  output_file: research/management_governance_analysis.md
+
+liquidity_risk_assessment_collection_task:
+  description: >
+    Conduct a comprehensive liquidity risk assessment for the {company}.
+    You need to gather information about the company's liquidity, gearing, capital structure, asset quality,
+    profitability metrics, cash flow, and valuations.
+    You also need to gather information about the key risks, risk management framework, risk appetite,
+    contingency plans, and crisis management strategies.
+    You need to ensure that the information is accurate, up-to-date, and relevant to the current market conditions.
+    You need to ensure that you have all the necessary information to generate the expected outputs, and in line with the 'liquidity_risk_assessment_collection checklist'
+    in the knowledge folder.
+  expected_output: >
+    A detailed and comprehensive report which includes at least 2 paragraphs and 200 words on the
+    liquidity, 2 paragraphs and 200 words on the gearing, 2 paragraphs and 200 words on the capital structure,
+    2 paragraphs and 200 words on the asset quality,
+    2 paragraphs and 200 words on the profitability metrics, 2 paragraphs and 200 words on the cash flow,
+    2 paragraphs and 200 words on the valuations, and
+    2 paragraphs and 200 words on the key risks, risk management framework, risk appetite,
+    contingency plans, and crisis management strategies.
+    The report should include a risk sensitivity analysis and stress testing of the investment case as well as
+    downside scenario analysis.
+    The report should include legal and regulatory exposures.
+    The report should be well-structured, easy to read, and provide a comprehensive overview of the liquidity risk assessment.
+    The report should be formatted as markdown without '```'.
+  agent: research_analyst
+  output_file: research/liquidity_risk_assessment.md
+
+#reporting_task:
+  #description: >
+    #Your task is to take all the research files and collate these into a report.
+    #You need to ensure that the report is well-structured, easy to read, and provides
+    #a comprehensive overview of the research findings.
+    #The report should include an executive summary, detailed sections on each topic,
+    #and a conclusion with recommendations.
+    #Make sure to include any relevant charts, graphs, and tables to support the findings.
+    #The report should be formatted as markdown without '```'.
+    #You need to ensure that the report is well-organized and easy to navigate.
+    #The report should be comprehensive and provide a clear understanding of the research findings.
+  #expected_output: >
+    #A fully fledged report with the main topics, each with a full section of information.
+    #Formatted as markdown without '```'
+  #agent: reporting_analyst
+  #output_file: research/final_research_report.md
+  #context: [
+    #"research/research_summary.md",
+    #"research/investment_thesis.md",
+    #"research/financial_due_diligence.md",
+    #"research/industry_competitive_analysis.md",
+    #"research/management_governance_analysis.md",
+    #"research/risk_assessment.md",
+    #"research/exit_strategy_liquidation_analysis.md"
+  #]
+
+define_investment_thesis_task:
+  description: >
+    Identify the **core value proposition** of the investment opportunity.
+    Understand the **market context**: Is it a disruptive technology? A recovery play? A structural compounder?
+    You need to make sure that you understand the business model and product overview of the {company}
+    Provide comprehensive customer segmentation and use cases
+    Provide sector classification and positioning.
+  expected_output: >
+    A detailed business model and product overview of the {company},
+    including customer segmentation, use cases, sector classification, and positioning.
+    A strategic analysis of the core value proposition and market.
+    Detailed sector classification and positioning.
+  agent: investment_analyst
+  output_file: analysis/investment_thesis.md
+
+financial_due_diligence_task:
+  description: >
+    Conduct a comprehensive financial due diligence on the {company}.
+    Analyze the **balance sheet**, liquidity, gearing, capital structure, asset quality.
+    Analyze the **profitability metrics**: margins, return on equity, return on capital employed, nett income.
+    Analyze the **cash flow**: operating cash flow, free cash flow, capital expenditures, working capital effeciency.
+    Analyze the **valuation**: P/E ratio, P/B ratio, EV/EBITDA, DCF analysis, scenario analysis.
+    Provide a detailed financial overview and valuation of the {company}.
+    You need to check 3 -5 years of historical income statement, balance sheets and cash flow statements.
+  expected_output: >
+    A comprehensive financial due diligence report on the {company},
+    including detailed analysis of balance sheet, liquidity, gearing, capital structure, asset quality,
+    profitability metrics, cash flow, and valuations.
+    The report should include a detailed financial overview and valuation of the {company}.
+  agent: financial_analyst
+  output_file: analysis/financial_due_diligence.md 
+
+industry_competitve_analysis_task:
+  description: >
+    Conduct a comprehensive industry competitive analysis for the {company}, includign market size, growth drivers and regulatory landscape.
+    Analyze the **competitive landscape**: key competitors, market share, competitive advantages.
+    Analyze the **industry trends**: growth rates, market dynamics, regulatory environment.
+    Analyze the **SWOT analysis**: strengths, weaknesses, opportunities, threats and **PORTER'S five foirces** to evaluate **competitive moat**.
+    Provide comprehensive and detailed benchmarking against peers and incumbents.
+    Provide a detailed industry overview and competitive positioning of the {company}.
+  expected_output: >
+    A comprehensive industry competitive analysis report on the {company},
+    including detailed analysis of market size, growth drivers, regulatory landscape,
+    competitive landscape, industry trends, SWOT analysis, CAGR estimates, and PORTER'S five forces.
+    The report should include a detailed industry trends and innovation cycles view and competitive positioning of the {company}.
+    The report should include detailed analysis of regulatory risk and compliance hurdles.
+  agent: industry_analyst
+  output_file: analysis/industry_competitive_analysis.md
+
+management_governance_analysis_task:
+  description: >
+    Conduct a comprehensive management governance analysis for the {company}.
+    Analyze the track record of capital allocation and strategic execution.
+    Evaluate **Insider ownership** and alignment.
+    Analyze the **management team**: backgrounds, experience, track record, and reputation.
+    Analyze the **board of directors**: composition, independence, expertise, and governance practices.
+    Evaluate the **corporate governance structure**: policies, procedures, and risk management practices.
+    Assess the **culture and values** of the organization.
+  expected_output: >
+    A comprehensive management governance analysis report on the {company},
+    including detailed analysis of management team, board of directors, corporate governance structure,
+    and organizational culture and values.
+    Details of insider ownership, compensation and incentive schemes.
+    Details of governance practices and ESG (Environmental, Social, and Governance) disclosures.
+    The report should include a detailed analysis of the management team's track record of capital allocation and strategic execution.
+  agent: governance_analyst
+  output_file: analysis/management_governance_analysis.md
+
+risk_assesment_task:
+  description: >
+    Conduct a comprehensive risk assessment for the {company}.
+    Identify and evaluate the **key risks**: operational, financial, market, regulatory, reputational, and strategic risks.
+    Analyze the **risk management framework**: policies, procedures, and practices.
+    Assess the **risk appetite** and tolerance of the organization.
+    Evaluate the **contingency plans** and crisis management strategies.
+    Do a risk sensitivity analysis and stress testingof the investment case.
+  expected_output: >
+    A comprehensive risk assessment report on the {company},
+    including detailed analysis of key risks, risk management framework, risk appetite, contingency plans,
+    and crisis management strategies.
+    The report should include a risk sensitivity analysis and stress testing of the investment case as well as downside scenario analysis.
+    Report must include legal and regulatory exposures.
+    Provide a detailed risk assessment report with recommendations for risk mitigation and management.
+  agent: risk_analyst
+  output_file: analysis/risk_assessment.md
+
+exit_strategy_liquidation_analysis_task:
+  description: >
+    Conduct a comprehensive exit strategy and liquidation analysis for the {company}.
+    Identify entry points, holding periods and catalysts.
+    Analyze the **exit options**: IPO, M&A, secondary sale, liquidation.
+    Evaluate the **liquidity** of the investment: cash flow, asset liquidation, and
+    potential exit multiples.
+    Assess the **exit timing**: market conditions, strategic fit, and valuation.
+  expected_output: >
+    Provide a detailed exit strategy and liquidation analysis report including trading volume shareholder structure and free float,
+    upcoming catalysts and news flow, with analyst coverage and price targets.
+    The report should include a detailed analysis of exit options, liquidity, and exit timing.
+  agent: exit_strategy_analyst
+  output_file: analysis/exit_strategy_liquidation_analysis.md
+
+decision_task:
+  description: >
+    Taking all the information provided in the analysis folder, evaluate the investment thesis, financial due diligence, industry competitive analysis, 
+    management governance analysis, risk assessment, and exit strategy liquidation analysis.
+    Assess the overall investment opportunity, according to your framework and experience.
+    Provide a clear recommendation on whether to proceed with the investment, hold, or exit, giving detailed reasons why.
+  expected_output: >
+    A clear and concise decision report with a recommendation on the investment opportunity,
+    including key findings from the analysis and research.
+    The report should be well-structured, easy to read, and provide a comprehensive overview of the decision-making process.
+  agent: richard
+  output_file: analysis/decision_report.md

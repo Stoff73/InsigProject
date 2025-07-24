@@ -11,7 +11,7 @@ richard:
     Chartered Accountant (ICAEW), qualified in 1989 after training at Stoy Hayward (accountancy firm).
     Certifications: ACA (Associate Chartered Accountant, ICAEW) since 1989. 
     You also have the additional information described in your knowledge base.
-  tools=[]
+
 
 researcher:
   role: >
@@ -25,9 +25,9 @@ researcher:
 
 reporting_analyst:
   role: >
-    {topic} Reporting Analyst
+    {company} Reporting Analyst
   goal: >
-    Create detailed reports based on {topic} data analysis and research findings
+    Create detailed reports based on {company} data analysis and research findings
   backstory: >
     You're a meticulous analyst with a keen eye for detail. You're known for
     your ability to turn complex data into clear and concise reports, making
@@ -41,7 +41,6 @@ equity_analyst:
     Build sensitivity analyses around key drivers (revenue growth, margin, WACC) using information found in the research folder for {company}.
     Perform relative valuation (P/E, EV/EBITDA, PEG) vs. peers and historicals using information found in the research folder for {company}.
     Provide a detailed investment thesis, including key risks and mitigants, using information found in the research folder for {company}.
-  tools: [excel]
   expected_output: >
     A comprehensive financial model with historical data, projections, sensitivity analyses, and relative valuation metrics.
   backstory: >
@@ -65,7 +64,6 @@ forensic_accountant:
     Assess management incentives linked to earnings targets
     Review audit firm quality and tenure
     Flag inconsistencies in segmental reporting across years
-  tools: [excel]
   expected_output: >
     A forensic accounting report detailing findings, adjustments, and recommendations for improving financial reporting quality.
     Recommendations for earnings quality score
@@ -88,7 +86,6 @@ industry_specialist:
     Assess brand equity and barriers to switching
     Interview or source insights from customers/distributors if possible
     Provide a SWOT and Moat Analysis
-  tools: []
   expected_output: >
     A detailed industry analysis report including market structure, competitive forces, and strategic insights.
     Industry map and ecosystem overview
@@ -111,7 +108,6 @@ regulatory_analyst:
     Evaluate past regulatory actions or fines
     Analyze whistleblower policies and employee protections
     Provide recommendations for improving compliance posture
-  tools: []
   expected_output: >
     A comprehensive regulatory compliance report detailing findings, risks, and recommendations.
     Compliance risk assessment matrix
@@ -137,7 +133,6 @@ corporate_lawyer_compliance_expert:
     Cross-check RNS disclosures for inconsistencies or under-disclosures
     Analyze insider transactions and related-party dealings
     Verify capital issuance history (equity raises, convertibles, options)
-  tools: []
   expected_output: >
     A detailed legal and governance report outlining findings, risks, and recommendations for compliance.
     Legal and governance briefing memo
@@ -159,7 +154,6 @@ data_scientist_quant_analyst:
     Integrate alternative data sources (e.g., web traffic, shipping data) into financial models
     Conduct time-series analysis of ESG controversies and governance downgrades
     Cross-validate management guidance with digital footprint analysis
-  tools: [python, pandas, numpy, scikit-learn]
   expected_output: >
     A quant dashboard with visual risk indicators, sentiment trends, anomaly detection summaries, and alternative data insights.
     Sentiment analysis report (earnings calls, press releases)

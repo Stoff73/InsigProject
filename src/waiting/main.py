@@ -17,8 +17,10 @@ def run():
     """
     Run the crew.
     """
+    company = input("Enter the company name: " ).strip()
+
     inputs = {
-        'topic': 'AI LLMs',
+        'company': company,
         'current_year': str(datetime.now().year)
     }
     

@@ -4,8 +4,12 @@ richard_persona:
     Your goal is to internalize this information, and augment your persona with this additional 
     information. You will make any and all decisions based on this information.
     You are not to break character for any reason.
+    In addition to the above, you have knowledge of the team available to you, and the tasks that they can perform.
+    You will be able to assign tasks to the team, and you will be able to make decisions based on the information provided by the team.
+    The team you have access to is in 'core_team.md' in the knowledge folder, full read this document and internalise this data. You are not to adopt any of the personas shown here, you are to remain as Richard, **DO NOT BREAK CHARACTER**, 
+    these are agents available to you for you to assign the necessary work to in order for you to perform your role as an activist investor.
   expected_output: >
-    A clear acknowledgement to the console that you have read the file and adopted the persona.
+    A clear acknowledgement to the console that you have read the files, adopted the persona and understand your team, listing out all team members and their competencies.
   agent: richard
 
 research_company_task:
@@ -13,8 +17,8 @@ research_company_task:
     Conduct a thorough research about {company} and its market.
     You need to gather information about the company, its products, services, and market position.
     You also need to gather information about the industry, market trends, and competitive landscape.
-    You need to ensure that the information is accurate, up-to-date, and relevant to the current market conditions.
-    You need to ensure that you have all the necessary information to generate the expeted outputs, and in line with the 'company_research checklist'
+    You need to ensure that the information is accurate, up-to-date, and relevant to the current market conditions, providing citations from all sources, with a link to the source.
+    You need to ensure that you have all the necessary information to generate the expeted outputs, in line with the 'company_research_checklist.md'
     in the knowledge folder.
   expected_output: >
     A detailed and comprehensive report which includes at least 2 paragraphs and 200 words on the business model,
@@ -25,7 +29,7 @@ research_company_task:
     A strategic plan consisting of at least 3 paragraphs and 350 words.
     The report should be well-structured, easy to read, and provide a comprehensive overview of the {company} and its market.
     The report should be formatted as markdown without '```'.
-  agent: research_analyst
+  agent: researcher
   output_file: research/research_summary.md
 
 financial_data_collection_task:
@@ -37,8 +41,8 @@ financial_data_collection_task:
     and cash flow statement.
     You do need to collect historical data, at least 3 - 5 years, to ensure that you have a comprehensive view of the company's financial performance.
     You need to ensure that the financial data is accurate, up-to-date (meaning that you need to take the historical data up to and incuding today's date), 
-    and relevant to the current market conditions.
-    You need to ensure that you have all the necessary information to generate the expected outputs, and in line with the 'financial_data_collection checklist'
+    and relevant to the current market conditions, providing citations from all sources, with a link to the source.
+    You need to ensure that you have all the necessary information to generate the expected outputs, and in line with the 'financial_data_collection_checklist.md'
     in the knowledge folder.
   expected_output: >
     The required figures, in tabular format with the correct labels to ensure that the equity_analyst can use them to generate the expected outputs.
@@ -49,7 +53,7 @@ financial_data_collection_task:
     Valuation; P/E ratio, P/B ratio, EV/EBITDA, DCF analysis, scenario analysis.
     The financial data should be accurate, up-to-date(meaning that you need to take the historical data up to and incuding today's date), 
     and relevant to the current market conditions.
-  agent: research_analyst
+  agent: researcher
   output_file: research/financial_data_collection.md
 
 industry_competitive_analysis_collection_task:
@@ -59,8 +63,8 @@ industry_competitive_analysis_collection_task:
     You also need to gather information about the key competitors, market share, competitive advantages, and industry trends.
     You need all the relevant infomration inorder for a SWOT analysis and porters five forces analysis to be done.
     You need to gather all information regarding legal and regulatory risk and compliance hurdles.
-    You need to ensure that the information is accurate, up-to-date, and relevant to the current market conditions.
-    You need to ensure that you have all the necessary information to generate the expected outputs, and in line with the 'industry_competitive_analysis_collection checklist'
+    You need to ensure that the information is accurate, up-to-date, and relevant to the current market conditions, providing citations from all sources, with a link to the source.
+    You need to ensure that you have all the necessary information to generate the expected outputs, and in line with the 'industry_competitive_analysis_collection_checklist.md'
     in the knowledge folder.
   expected_output: >
     A detailed and comprehensive report which includes at least 2 paragraphs and 200 words on the
@@ -71,7 +75,7 @@ industry_competitive_analysis_collection_task:
     The report should include detailed analysis of regulatory risk and compliance hurdles.
     The report should be well-structured, easy to read, and provide a comprehensive overview of the industry and competitive landscape.
     The report should be formatted as markdown without '```'.
-  agent: research_analyst
+  agent: researcher
   output_file: research/industry_competitive_analysis.md
 
 management_governance_analysis_collection_task:
@@ -82,8 +86,8 @@ management_governance_analysis_collection_task:
     You also need to gather information about the track record of capital allocation and strategic execution,
     insider ownership and alignment, management team backgrounds, experience, track record, and reputation,
     board of directors composition, independence, expertise, and governance practices.
-    You need to ensure that the information is accurate, up-to-date, and relevant to the current market conditions.
-    You need to ensure that you have all the necessary information to generate the expected outputs, and in line with the 'management_governance_analysis_collection checklist'
+    You need to ensure that the information is accurate, up-to-date, and relevant to the current market conditions, providing citations from all sources, with a link to the source.
+    You need to ensure that you have all the necessary information to generate the expected outputs, and in line with the 'management_governance_analysis_collection_checklist.md'
     in the knowledge folder.
   expected_output: >
     A detailed and comprehensive report which includes at least 2 paragraphs and 200 words on the
@@ -93,7 +97,7 @@ management_governance_analysis_collection_task:
     The report should include a detailed analysis of the management team's track record of capital allocation and strategic execution.
     The report should be well-structured, easy to read, and provide a comprehensive overview of the management governance analysis.
     The report should be formatted as markdown without '```'.
-  agent: research_analyst
+  agent: researcher
   output_file: research/management_governance_analysis.md
 
 liquidity_risk_assessment_collection_task:
@@ -103,8 +107,8 @@ liquidity_risk_assessment_collection_task:
     profitability metrics, cash flow, and valuations.
     You also need to gather information about the key risks, risk management framework, risk appetite,
     contingency plans, and crisis management strategies.
-    You need to ensure that the information is accurate, up-to-date, and relevant to the current market conditions.
-    You need to ensure that you have all the necessary information to generate the expected outputs, and in line with the 'liquidity_risk_assessment_collection checklist'
+    You need to ensure that the information is accurate, up-to-date, and relevant to the current market conditions, providing citations from all sources, with a link to the source.
+    You need to ensure that you have all the necessary information to generate the expected outputs, and in line with the 'liquidity_risk_assessment_collection_checklist.md'
     in the knowledge folder.
   expected_output: >
     A detailed and comprehensive report which includes at least 2 paragraphs and 200 words on the
@@ -119,7 +123,7 @@ liquidity_risk_assessment_collection_task:
     The report should include legal and regulatory exposures.
     The report should be well-structured, easy to read, and provide a comprehensive overview of the liquidity risk assessment.
     The report should be formatted as markdown without '```'.
-  agent: research_analyst
+  agent: researcher
   output_file: research/liquidity_risk_assessment.md
 
 #reporting_task:
@@ -160,7 +164,7 @@ define_investment_thesis_task:
     including customer segmentation, use cases, sector classification, and positioning.
     A strategic analysis of the core value proposition and market.
     Detailed sector classification and positioning.
-  agent: investment_analyst
+  agent: equity_analyst
   output_file: analysis/investment_thesis.md
 
 financial_due_diligence_task:
@@ -177,7 +181,7 @@ financial_due_diligence_task:
     including detailed analysis of balance sheet, liquidity, gearing, capital structure, asset quality,
     profitability metrics, cash flow, and valuations.
     The report should include a detailed financial overview and valuation of the {company}.
-  agent: financial_analyst
+  agent: forensic_accountant
   output_file: analysis/financial_due_diligence.md 
 
 industry_competitve_analysis_task:
@@ -194,7 +198,7 @@ industry_competitve_analysis_task:
     competitive landscape, industry trends, SWOT analysis, CAGR estimates, and PORTER'S five forces.
     The report should include a detailed industry trends and innovation cycles view and competitive positioning of the {company}.
     The report should include detailed analysis of regulatory risk and compliance hurdles.
-  agent: industry_analyst
+  agent: industry_specialist
   output_file: analysis/industry_competitive_analysis.md
 
 management_governance_analysis_task:
@@ -213,7 +217,7 @@ management_governance_analysis_task:
     Details of insider ownership, compensation and incentive schemes.
     Details of governance practices and ESG (Environmental, Social, and Governance) disclosures.
     The report should include a detailed analysis of the management team's track record of capital allocation and strategic execution.
-  agent: governance_analyst
+  agent: corporate_lawyer_compliance_expert
   output_file: analysis/management_governance_analysis.md
 
 risk_assesment_task:
@@ -231,7 +235,7 @@ risk_assesment_task:
     The report should include a risk sensitivity analysis and stress testing of the investment case as well as downside scenario analysis.
     Report must include legal and regulatory exposures.
     Provide a detailed risk assessment report with recommendations for risk mitigation and management.
-  agent: risk_analyst
+  agent: regulatory_analyst
   output_file: analysis/risk_assessment.md
 
 exit_strategy_liquidation_analysis_task:
@@ -246,7 +250,7 @@ exit_strategy_liquidation_analysis_task:
     Provide a detailed exit strategy and liquidation analysis report including trading volume shareholder structure and free float,
     upcoming catalysts and news flow, with analyst coverage and price targets.
     The report should include a detailed analysis of exit options, liquidity, and exit timing.
-  agent: exit_strategy_analyst
+  agent: equity_analyst
   output_file: analysis/exit_strategy_liquidation_analysis.md
 
 decision_task:

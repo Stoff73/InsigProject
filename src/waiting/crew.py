@@ -2,6 +2,8 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
+from crewai_tools import DirectoryReadTool, FileReadTool, DirectorySearchTool, DOCXSearchTool, FileWriterTool, PDFSearchTool, SerperDevTool, TXTSearchTool
+#from waiting.tools.excel_reader_tool import extract_data_from_excel
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
@@ -23,65 +25,132 @@ class Waiting():
     def researcher(self) -> Agent:
         return Agent(
             config=self.agents_config['researcher'], # type: ignore[index]
-            verbose=True
+            verbose=True,
+            tools=[SerperDevTool(),
+                   DirectoryReadTool(),
+                   FileReadTool(),
+                   DirectorySearchTool(),
+                   DOCXSearchTool(),
+                   PDFSearchTool(),
+                   TXTSearchTool(),
+                   FileWriterTool(),
+                   #extract_data_from_excel
+                   ]  # Custom tool for Excel data extraction    
         )
 
     @agent
     def reporting_analyst(self) -> Agent:
         return Agent(
             config=self.agents_config['reporting_analyst'], # type: ignore[index]
-            verbose=True
+            verbose=True,
+            tools=[SerperDevTool(),
+                   DirectoryReadTool(),
+                   FileReadTool(),
+                   DirectorySearchTool(),
+                   DOCXSearchTool(),
+                   PDFSearchTool(),
+                   TXTSearchTool(),
+                   FileWriterTool()]   
         )
     
     @agent
     def richard(self) -> Agent:
         return Agent(
             config=self.agents_config['richard'], # type: ignore[index]
-            verbose=True
+            verbose=True,
+            knowledge_base=['activistinvestor.md', 'core_team.md'], # type: ignore[index]
+            tools=[DirectoryReadTool(),
+                   FileReadTool(),
+                   DirectorySearchTool(),
+                   DOCXSearchTool(),
+                   PDFSearchTool(),
+                   TXTSearchTool(),
+                   FileWriterTool()]   
         )
     
     @agent
     def equity_analyst(self) -> Agent:
         return Agent(
             config=self.agents_config['equity_analyst'], # type: ignore[index]
-            verbose=True
+            verbose=True,
+            tools=[DirectoryReadTool(),
+                   FileReadTool(),
+                   DirectorySearchTool(),
+                   DOCXSearchTool(),
+                   PDFSearchTool(),
+                   TXTSearchTool(),
+                   FileWriterTool()] 
         )
     
     @agent
     def forensic_accountant(self) -> Agent:
         return Agent(
             config=self.agents_config['forensic_accountant'], # type: ignore[index]
-            verbose=True
+            verbose=True,
+            tools=[DirectoryReadTool(),
+                   FileReadTool(),
+                   DirectorySearchTool(),
+                   DOCXSearchTool(),
+                   PDFSearchTool(),
+                   TXTSearchTool(),
+                   FileWriterTool()] 
         )
     
     @agent
     def industry_specialist(self) -> Agent:
         return Agent(
             config=self.agents_config['industry_specialist'], # type: ignore[index]
-            verbose=True
+            verbose=True,
+            tools=[DirectoryReadTool(),
+                   FileReadTool(),
+                   DirectorySearchTool(),
+                   DOCXSearchTool(),
+                   PDFSearchTool(),
+                   TXTSearchTool(),
+                   FileWriterTool()] 
         )
     
     @agent
     def regulatory_analyst(self) -> Agent:
         return Agent(
             config=self.agents_config['regulatory_analyst'], # type: ignore[index]
-            verbose=True
+            verbose=True,
+            tools=[DirectoryReadTool(),
+                   FileReadTool(),
+                   DirectorySearchTool(),
+                   DOCXSearchTool(),
+                   PDFSearchTool(),
+                   TXTSearchTool(),
+                   FileWriterTool()] 
         )
     
     @agent
     def corporate_lawyer_compliance_expert(self) -> Agent:
         return Agent(
             config=self.agents_config['corporate_lawyer_compliance_expert'], # type: ignore[index]
-            verbose=True
+            verbose=True,
+            tools=[DirectoryReadTool(),
+                   FileReadTool(),
+                   DirectorySearchTool(),
+                   DOCXSearchTool(),
+                   PDFSearchTool(),
+                   TXTSearchTool(),
+                   FileWriterTool()] 
         )
     
     @agent
     def data_scientist_quant_analyst(self) -> Agent:
         return Agent(
             config=self.agents_config['data_scientist_quant_analyst'], # type: ignore[index]
-            verbose=True
+            verbose=True,
+            tools=[DirectoryReadTool(),
+                   FileReadTool(),
+                   DirectorySearchTool(),
+                   DOCXSearchTool(),
+                   PDFSearchTool(),
+                   TXTSearchTool(),
+                   FileWriterTool()] 
         )
-
 
     # To learn more about structured task outputs,
     # task dependencies, and task callbacks, check out the documentation:

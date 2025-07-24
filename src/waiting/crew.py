@@ -25,7 +25,7 @@ class Waiting():
     def researcher(self) -> Agent:
         return Agent(
             config=self.agents_config['researcher'], # type: ignore[index]
-            verbose=True,
+            verbose=False,
             tools=[SerperDevTool(),
                    DirectoryReadTool(),
                    FileReadTool(),
@@ -42,7 +42,7 @@ class Waiting():
     def reporting_analyst(self) -> Agent:
         return Agent(
             config=self.agents_config['reporting_analyst'], # type: ignore[index]
-            verbose=True,
+            verbose=False,
             tools=[SerperDevTool(),
                    DirectoryReadTool(),
                    FileReadTool(),
@@ -57,7 +57,7 @@ class Waiting():
     def richard(self) -> Agent:
         return Agent(
             config=self.agents_config['richard'], # type: ignore[index]
-            verbose=True,
+            verbose=False,
             knowledge_base=['activistinvestor.md', 'core_team.md'], # type: ignore[index]
             tools=[DirectoryReadTool(),
                    FileReadTool(),
@@ -72,7 +72,7 @@ class Waiting():
     def equity_analyst(self) -> Agent:
         return Agent(
             config=self.agents_config['equity_analyst'], # type: ignore[index]
-            verbose=True,
+            verbose=False,
             tools=[DirectoryReadTool(),
                    FileReadTool(),
                    DirectorySearchTool(),
@@ -86,7 +86,7 @@ class Waiting():
     def forensic_accountant(self) -> Agent:
         return Agent(
             config=self.agents_config['forensic_accountant'], # type: ignore[index]
-            verbose=True,
+            verbose=False,
             tools=[DirectoryReadTool(),
                    FileReadTool(),
                    DirectorySearchTool(),
@@ -100,7 +100,7 @@ class Waiting():
     def industry_specialist(self) -> Agent:
         return Agent(
             config=self.agents_config['industry_specialist'], # type: ignore[index]
-            verbose=True,
+            verbose=False,
             tools=[DirectoryReadTool(),
                    FileReadTool(),
                    DirectorySearchTool(),
@@ -114,7 +114,7 @@ class Waiting():
     def regulatory_analyst(self) -> Agent:
         return Agent(
             config=self.agents_config['regulatory_analyst'], # type: ignore[index]
-            verbose=True,
+            verbose=False,
             tools=[DirectoryReadTool(),
                    FileReadTool(),
                    DirectorySearchTool(),
@@ -128,7 +128,7 @@ class Waiting():
     def corporate_lawyer_compliance_expert(self) -> Agent:
         return Agent(
             config=self.agents_config['corporate_lawyer_compliance_expert'], # type: ignore[index]
-            verbose=True,
+            verbose=False,
             tools=[DirectoryReadTool(),
                    FileReadTool(),
                    DirectorySearchTool(),
@@ -142,7 +142,7 @@ class Waiting():
     def data_scientist_quant_analyst(self) -> Agent:
         return Agent(
             config=self.agents_config['data_scientist_quant_analyst'], # type: ignore[index]
-            verbose=True,
+            verbose=False,
             tools=[DirectoryReadTool(),
                    FileReadTool(),
                    DirectorySearchTool(),

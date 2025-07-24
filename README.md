@@ -1,5 +1,13 @@
 # Waiting Crew
 
+I have made a number of changes, the agents, currently, do not have internet access, ecept for research, in order to fetch data. To change this we can modify to search a database, vectorstore or anything else really.
+
+I do still need to put in correct structured output classes, I have just used the agent 'expected output' property for this, not the best solution as can be janky.
+
+I have kept memory off, except for the main agent, as well as assignments for now.
+
+Tested the logic, seems to work, the prompts seems to be okay, although a bit big. Turning verbose off helps with this, I am of course useing 4.1-mini, so using a bigger model will help, but cost more.
+
 Welcome to the Waiting Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
 
 ## Installation
@@ -36,8 +44,6 @@ $ crewai run
 ```
 
 This command initializes the waiting Crew, assembling the agents and assigning them tasks as defined in your configuration.
-
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
 
 ## Understanding Your Crew
 

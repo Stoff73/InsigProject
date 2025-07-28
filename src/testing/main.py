@@ -4,7 +4,7 @@ import warnings
 
 from datetime import datetime
 
-from waiting.crew import Waiting
+from testing.crew import Testing
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
@@ -25,7 +25,7 @@ def run():
     }
     
     try:
-        Waiting().crew().kickoff(inputs=inputs)
+        Testing().crew().kickoff(inputs=inputs)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 
@@ -39,7 +39,7 @@ def train():
         'current_year': str(datetime.now().year)
     }
     try:
-        Waiting().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
+        Testing().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
@@ -49,7 +49,7 @@ def replay():
     Replay the crew execution from a specific task.
     """
     try:
-        Waiting().crew().replay(task_id=sys.argv[1])
+        Testing().crew().replay(task_id=sys.argv[1])
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
@@ -64,7 +64,7 @@ def test():
     }
     
     try:
-        Waiting().crew().test(n_iterations=int(sys.argv[1]), eval_llm=sys.argv[2], inputs=inputs)
+        Testing().crew().test(n_iterations=int(sys.argv[1]), eval_llm=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while testing the crew: {e}")

@@ -2,15 +2,13 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
-from crewai_tools import DirectoryReadTool, FileReadTool, DirectorySearchTool, DOCXSearchTool, FileWriterTool, PDFSearchTool, SerperDevTool, TXTSearchTool
-#from waiting.tools.excel_reader_tool import extract_data_from_excel
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 
 @CrewBase
-class Waiting():
-    """Waiting crew"""
+class Testing():
+    """Testing crew"""
 
     agents: List[BaseAgent]
     tasks: List[Task]
@@ -25,146 +23,79 @@ class Waiting():
     def researcher(self) -> Agent:
         return Agent(
             config=self.agents_config['researcher'], # type: ignore[index]
-            verbose=False,
-            tools=[SerperDevTool(),
-                   DirectoryReadTool(),
-                   FileReadTool(),
-                   DirectorySearchTool(),
-                   DOCXSearchTool(),
-                   PDFSearchTool(),
-                   TXTSearchTool(),
-                   FileWriterTool(),
-                   #extract_data_from_excel
-                   ]  # Custom tool for Excel data extraction    
+            verbose=True
         )
 
-    @agent
-    def reporting_analyst(self) -> Agent:
-        return Agent(
-            config=self.agents_config['reporting_analyst'], # type: ignore[index]
-            verbose=False,
-            tools=[SerperDevTool(),
-                   DirectoryReadTool(),
-                   FileReadTool(),
-                   DirectorySearchTool(),
-                   DOCXSearchTool(),
-                   PDFSearchTool(),
-                   TXTSearchTool(),
-                   FileWriterTool()]   
-        )
-    
-    @agent
-    def richard(self) -> Agent:
-        return Agent(
-            config=self.agents_config['richard'], # type: ignore[index]
-            verbose=False,
-            knowledge_base=['activistinvestor.md', 'core_team.md'], # type: ignore[index]
-            tools=[DirectoryReadTool(),
-                   FileReadTool(),
-                   DirectorySearchTool(),
-                   DOCXSearchTool(),
-                   PDFSearchTool(),
-                   TXTSearchTool(),
-                   FileWriterTool()]   
-        )
-    
+    # @agent
+    # def reporting_analyst(self) -> Agent:
+    #     return Agent(
+    #         config=self.agents_config['reporting_analyst'], # type: ignore[index]
+    #         verbose=True
+    #     )
+
     @agent
     def equity_analyst(self) -> Agent:
         return Agent(
             config=self.agents_config['equity_analyst'], # type: ignore[index]
-            verbose=False,
-            tools=[DirectoryReadTool(),
-                   FileReadTool(),
-                   DirectorySearchTool(),
-                   DOCXSearchTool(),
-                   PDFSearchTool(),
-                   TXTSearchTool(),
-                   FileWriterTool()] 
+            verbose=True
         )
     
     @agent
     def forensic_accountant(self) -> Agent:
         return Agent(
             config=self.agents_config['forensic_accountant'], # type: ignore[index]
-            verbose=False,
-            tools=[DirectoryReadTool(),
-                   FileReadTool(),
-                   DirectorySearchTool(),
-                   DOCXSearchTool(),
-                   PDFSearchTool(),
-                   TXTSearchTool(),
-                   FileWriterTool()] 
+            verbose=True
         )
     
     @agent
     def industry_specialist(self) -> Agent:
         return Agent(
             config=self.agents_config['industry_specialist'], # type: ignore[index]
-            verbose=False,
-            tools=[DirectoryReadTool(),
-                   FileReadTool(),
-                   DirectorySearchTool(),
-                   DOCXSearchTool(),
-                   PDFSearchTool(),
-                   TXTSearchTool(),
-                   FileWriterTool()] 
+            verbose=True
         )
     
     @agent
     def regulatory_analyst(self) -> Agent:
         return Agent(
             config=self.agents_config['regulatory_analyst'], # type: ignore[index]
-            verbose=False,
-            tools=[DirectoryReadTool(),
-                   FileReadTool(),
-                   DirectorySearchTool(),
-                   DOCXSearchTool(),
-                   PDFSearchTool(),
-                   TXTSearchTool(),
-                   FileWriterTool()] 
+            verbose=True
         )
     
     @agent
     def corporate_lawyer_compliance_expert(self) -> Agent:
         return Agent(
             config=self.agents_config['corporate_lawyer_compliance_expert'], # type: ignore[index]
-            verbose=False,
-            tools=[DirectoryReadTool(),
-                   FileReadTool(),
-                   DirectorySearchTool(),
-                   DOCXSearchTool(),
-                   PDFSearchTool(),
-                   TXTSearchTool(),
-                   FileWriterTool()] 
+            verbose=True
         )
     
     @agent
     def data_scientist_quant_analyst(self) -> Agent:
         return Agent(
             config=self.agents_config['data_scientist_quant_analyst'], # type: ignore[index]
-            verbose=False,
-            tools=[DirectoryReadTool(),
-                   FileReadTool(),
-                   DirectorySearchTool(),
-                   DOCXSearchTool(),
-                   PDFSearchTool(),
-                   TXTSearchTool(),
-                   FileWriterTool()] 
+            verbose=True
+        )
+    
+    @agent
+    def richard(self) -> Agent:
+        return Agent(
+            config=self.agents_config['richard'], # type: ignore[index]
+            verbose=True
         )
 
     # To learn more about structured task outputs,
     # task dependencies, and task callbacks, check out the documentation:
     # https://docs.crewai.com/concepts/tasks#overview-of-a-task
     @task
-    def richard_persona(self) -> Task:
+    def research_task(self) -> Task:
         return Task(
-            config=self.tasks_config['richard_persona'], # type: ignore[index]
+            config=self.tasks_config['research_task'], # type: ignore[index]
         )
 
     @task
-    def research_company_task(self) -> Task:
+    def reporting_task(self) -> Task:
         return Task(
-            config=self.tasks_config['research_company_task'], # type: ignore[index]
+            config=self.tasks_config['reporting_task'], # type: ignore[index]
+            output_file='research/{company}_report.md'
         )
     
     @task
@@ -232,12 +163,10 @@ class Waiting():
         return Task(
             config=self.tasks_config['decision_task'], # type: ignore[index]
         )
-    
-    
 
     @crew
     def crew(self) -> Crew:
-        """Creates the Waiting crew"""
+        """Creates the Testing crew"""
         # To learn how to add knowledge sources to your crew, check out the documentation:
         # https://docs.crewai.com/concepts/knowledge#what-is-knowledge
 

@@ -2,9 +2,15 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
+from crewai.knowledge.source.text_file_knowledge_source import TextFileKnowledgeSource
+
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
+
+text_source = TextFileKnowledgeSource(
+    file_paths=["activistinvestor.txt"]
+)
 
 @CrewBase
 class Testing():
@@ -79,7 +85,8 @@ class Testing():
     def richard(self) -> Agent:
         return Agent(
             config=self.agents_config['richard'], # type: ignore[index]
-            verbose=True
+            verbose=True,
+            knowledge_sources=[text_source] # Adding knowledge source to the agent
         )
 
     # To learn more about structured task outputs,
